@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkouwesh_wiki=self.webpackChunkouwesh_wiki||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/wiki/blog","blogTitle":"Blog","authorsListPath":"/wiki/blog/authors"}')}}]);
