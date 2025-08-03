@@ -10,62 +10,70 @@ type FeatureItem = {
 };
 
 const FeatureList: FeatureItem[] = [
-  {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
+    {
+        title: 'Backend Development',
+        Svg: require('@site/static/img/undraw_programming_65t2.svg').default,
+        description: (
+            <>
+                Expertise in building scalable, high-performance backend systems using Java, Spring Boot, and microservices architecture.
+            </>
+        ),
+    },
+    {
+        title: 'System Design',
+        Svg: require('@site/static/img/undraw_building-a-website_1wrp.svg').default,
+        description: (
+            <>
+                Experience in designing and optimizing distributed systems, APIs, and database schemas for optimal performance.
+            </>
+        ),
+    },
+    {
+        title: 'Leadership & Mentorship',
+        Svg: require('@site/static/img/undraw_teacher_s628.svg').default,
+        description: (
+            <>
+                Passionate about mentoring junior developers and leading technical teams to deliver high-quality software solutions.
+            </>
+        ),
+    },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
+function Feature({title, Svg, description}: Readonly<FeatureItem>) {
+    return (
+        <div className={clsx('col col--4 padding-vert--md')}>
+            <div className="text--center">
+                <Svg className={styles.featureSvg} role="img" />
+            </div>
+            <div className="text--center padding-horiz--md">
+                <Heading as="h3" className="margin-bottom--sm">{title}</Heading>
+                <p className="text--justify">{description}</p>
+            </div>
+        </div>
+    );
 }
 
 export default function HomepageFeatures(): ReactNode {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <section className={styles.features}>
+            <div className="container">
+                <div className="row">
+                    <div className="col col--10 col--offset-1">
+                        <div className="text--center margin-bottom--xl">
+                            <h2>Areas of Expertise</h2>
+                            <p className="margin-top--md">
+                                With over 4 years of professional experience, I've worked on a variety of projects
+                                and technologies. Here are some of my key areas of expertise.
+                            </p>
+                        </div>
+                        <div className="row">
+                            {FeatureList.map((props, idx) => (
+                                <Feature key={idx} {...props} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
