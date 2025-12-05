@@ -138,6 +138,13 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+
+      algolia: {
+        apiKey: '6cddda233796f7c9778b41b20374ac58',
+        indexName: 'ouwesh_wiki_articles',
+        appId: 'SVN2TMOHYB',
+        contextualSearch: true,
+      },
   } satisfies Preset.ThemeConfig,
 };
 
