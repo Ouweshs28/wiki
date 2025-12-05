@@ -26,7 +26,11 @@ const config: Config = {
   projectName: 'wiki', // Usually your repo name.
   trailingSlash: false,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+    markdown:{
+      hooks:{
+       onBrokenMarkdownLinks: 'warn'
+      }
+    },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -140,10 +144,9 @@ const config: Config = {
     },
 
       algolia: {
-        apiKey: '6cddda233796f7c9778b41b20374ac58',
-        indexName: 'ouwesh_wiki_articles',
-        appId: 'SVN2TMOHYB',
-        contextualSearch: true,
+        apiKey: '40308d5f660a60fc745fc9538be00b09',
+        indexName: 'crawler_Ouwesh Wiki Search',
+        appId: 'SVN2TMOHYB'
       },
   } satisfies Preset.ThemeConfig,
 };
