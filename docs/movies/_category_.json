@@ -1,0 +1,9 @@
+{
+  "label": "Movies",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Lists, reviews, and notes about movies.",
+    "slug": "/movies"
+  }
+}

@@ -46,6 +46,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          exclude: ['tutorial-basics/**', 'tutorial-extras/**'],
         },
         blog: {
           showReadingTime: true,
@@ -78,7 +79,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Wiki',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {

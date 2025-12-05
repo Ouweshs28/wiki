@@ -1,0 +1,9 @@
+{
+  "label": "Technology",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Technology topics including DevOps and Programming.",
+    "slug": "/technology"
+  }
+}
