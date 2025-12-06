@@ -2,108 +2,253 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.ouwesh.com/blog</id>
     <title>Ouwesh Wiki Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2025-12-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.ouwesh.com/blog"/>
     <subtitle>Ouwesh Wiki Blog</subtitle>
     <icon>https://wiki.ouwesh.com/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://wiki.ouwesh.com/blog/welcome</id>
-        <link href="https://wiki.ouwesh.com/blog/welcome"/>
-        <updated>2021-08-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer" class="">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer" class="">blog plugin</a>.</p>
-<p>Here are a few tips you might find useful.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
+        <title type="html"><![CDATA[Dependency Injection in Spring: @Autowired vs Constructor-Based Injection]]></title>
+        <id>https://wiki.ouwesh.com/blog/spring-dependency-injection</id>
+        <link href="https://wiki.ouwesh.com/blog/spring-dependency-injection"/>
+        <updated>2025-12-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In Spring Framework, dependency injection (DI) is a fundamental concept that allows for the creation of loosely coupled components. Two common methods for DI are using the @Autowired annotation and constructor-based injection. This article explores when to use each method.]]></summary>
+        <content type="html"><![CDATA[<p>In Spring Framework, dependency injection (DI) is a fundamental concept that allows for the creation of loosely coupled components. Two common methods for DI are using the <code>@Autowired</code> annotation and constructor-based injection. This article explores when to use each method.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="autowired-annotation">@Autowired Annotation<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#autowired-annotation" class="hash-link" aria-label="Direct link to @Autowired Annotation" title="Direct link to @Autowired Annotation" translate="no">​</a></h2>
+<p><code>@Autowired</code> is a Spring annotation used for automatic dependency injection. It can be applied to fields, setters, and constructors.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-to-use-autowired">When to Use @Autowired:<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#when-to-use-autowired" class="hash-link" aria-label="Direct link to When to Use @Autowired:" title="Direct link to When to Use @Autowired:" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Field Injection:</strong>
 <ul>
-<li class=""><code>2019-05-30-welcome.md</code></li>
-<li class=""><code>2019-05-30-welcome/index.md</code></li>
+<li class="">Quick Prototyping: Ideal for rapid development and prototyping.</li>
+<li class="">Legacy Code: Useful when integrating DI into existing codebases without significant refactoring.</li>
+<li class="">Simplicity: Reduces boilerplate code by directly injecting dependencies into fields.</li>
 </ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://wiki.ouwesh.com/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
+</li>
+</ol>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private MyService myService;</span><br></span></code></pre></div></div>
+<ol start="2">
+<li class=""><strong>Setter Injection:</strong>
+<ul>
+<li class="">Optional Dependencies: Suitable for optional dependencies that can be set post-construction.</li>
+<li class="">Bean Reconfiguration: Allows for changing dependencies without altering the constructor.</li>
+</ul>
+</li>
+</ol>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public void setMyService(MyService myService) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    this.myService = myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<p><strong>Good Example of @Autowired:</strong></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class MyComponent {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private MyService myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void performAction() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        myService.execute();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<p><strong>Bad Example of @Autowired:</strong></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class MyComponent {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private MyService myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private AnotherService anotherService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // Too many dependencies injected via fields can make the class hard to test and maintain</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="constructor-based-injection">Constructor-Based Injection<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#constructor-based-injection" class="hash-link" aria-label="Direct link to Constructor-Based Injection" title="Direct link to Constructor-Based Injection" translate="no">​</a></h2>
+<p>Constructor-based injection involves passing dependencies through a class constructor. This method is recommended for several reasons.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="when-to-use-constructor-based-injection">When to Use Constructor-Based Injection:<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#when-to-use-constructor-based-injection" class="hash-link" aria-label="Direct link to When to Use Constructor-Based Injection:" title="Direct link to When to Use Constructor-Based Injection:" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Mandatory Dependencies:</strong>
+<ul>
+<li class="">Required Dependencies: Ensures that all required dependencies are provided at object creation time.</li>
+<li class="">Immutability: Promotes immutability by making dependencies final.</li>
+</ul>
+</li>
+</ol>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">public class MyClass {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private final MyService myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public MyClass(MyService myService) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        this.myService = myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<ol start="2">
+<li class="">
+<p><strong>Testability:</strong></p>
+<ul>
+<li class="">Unit Testing: Facilitates easier unit testing by allowing dependencies to be injected via constructors.</li>
+<li class="">Mocking: Simplifies the use of mock objects in tests.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Clear Dependencies:</strong></p>
+<ul>
+<li class="">Explicit Dependencies: Makes dependencies explicit, improving code readability and maintainability.</li>
+<li class="">Avoids Reflection: Does not rely on reflection, which can be beneficial for performance and simplicity.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Bad Example: Circular Dependencies</strong></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class ComponentA {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private ComponentB componentB;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class ComponentB {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private ComponentA componentA;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Circular dependencies can lead to issues during bean initialization</span><br></span></code></pre></div></div>
+<p><strong>Bad Example: Field Injection in Non-Spring Managed Classes</strong></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">public class NonSpringClass {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private MyService myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void performAction() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        myService.execute();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// @Autowired will not work here because NonSpringClass is not managed by Spring</span><br></span></code></pre></div></div>
+<p><strong>Bad Example: Optional Dependencies (with Constructor Injection)</strong></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class MyComponent {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private final MyService myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private final OptionalService optionalService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public MyComponent(MyService myService, OptionalService optionalService) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        this.myService = myService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        this.optionalService = optionalService;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void performAction() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        myService.execute();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        if (optionalService != null) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            optionalService.execute();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Optional dependencies are better handled with setter injection or @Autowired on fields</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-prefer-constructor-based-injection-over-autowired">Why Prefer Constructor-Based Injection Over @Autowired<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#why-prefer-constructor-based-injection-over-autowired" class="hash-link" aria-label="Direct link to Why Prefer Constructor-Based Injection Over @Autowired" title="Direct link to Why Prefer Constructor-Based Injection Over @Autowired" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advantages-of-constructor-based-injection">Advantages of Constructor-Based Injection:<a href="https://wiki.ouwesh.com/blog/spring-dependency-injection#advantages-of-constructor-based-injection" class="hash-link" aria-label="Direct link to Advantages of Constructor-Based Injection:" title="Direct link to Advantages of Constructor-Based Injection:" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Mandatory Dependencies:</strong></p>
+<ul>
+<li class="">Ensures that all required dependencies are provided at object creation time, preventing the object from being in an invalid state.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Immutability:</strong></p>
+<ul>
+<li class="">Promotes immutability by making dependencies final, which can lead to more predictable and thread-safe code.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Testability:</strong></p>
+<ul>
+<li class="">Facilitates easier unit testing by allowing dependencies to be injected via constructors, making it straightforward to use mock objects.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Explicit Dependencies:</strong></p>
+<ul>
+<li class="">Makes dependencies explicit, improving code readability and maintainability. It is clear what dependencies are required for the class to function.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Avoids Reflection:</strong></p>
+<ul>
+<li class="">Does not rely on reflection, which can be beneficial for performance and simplicity.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Single Responsibility Principle:</strong></p>
+<ul>
+<li class="">Encourages adherence to the Single Responsibility Principle by making it clear when a class has too many dependencies, indicating that it might be doing too much.</li>
+</ul>
+</li>
+</ol>
+<p>By preferring constructor-based injection, you can create more robust, maintainable, and testable code.</p>]]></content>
         <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
+            <name>Ouwesh Seeroo</name>
+            <uri>https://linkedin.com/in/ouweshs28</uri>
         </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://linkedin.com/in/yangshun</uri>
-        </author>
-        <category label="Facebook" term="Facebook"/>
-        <category label="Hello" term="Hello"/>
-        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="Spring" term="Spring"/>
+        <category label="Java" term="Java"/>
+        <category label="Dependency Injection" term="Dependency Injection"/>
+        <category label="Best Practices" term="Best Practices"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>https://wiki.ouwesh.com/blog/mdx-blog-post</id>
-        <link href="https://wiki.ouwesh.com/blog/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
-        <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer" class="">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer" class="">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p></div></div>
-<!-- -->
-<p>For example, use JSX to create an interactive button:</p>
-<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
-<button>Click me!</button>]]></content>
+        <title type="html"><![CDATA[Spring Read-Only Transaction Hibernate Optimization]]></title>
+        <id>https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization</id>
+        <link href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization"/>
+        <updated>2025-12-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In Spring applications, proper transaction management is crucial for both data integrity and performance. This article explores how to optimize database operations using Spring's @Transactional annotation with a focus on read-only transactions and Hibernate optimizations.]]></summary>
+        <content type="html"><![CDATA[<p>In Spring applications, proper transaction management is crucial for both data integrity and performance. This article explores how to optimize database operations using Spring's <code>@Transactional</code> annotation with a focus on read-only transactions and Hibernate optimizations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="understanding-transactional-attributes">Understanding @Transactional Attributes<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#understanding-transactional-attributes" class="hash-link" aria-label="Direct link to Understanding @Transactional Attributes" title="Direct link to Understanding @Transactional Attributes" translate="no">​</a></h2>
+<p>The <code>@Transactional</code> annotation provides several attributes for fine-grained transaction control:</p>
+<ul>
+<li class=""><strong>value/transactionManager</strong>: Specifies which transaction manager to use</li>
+<li class=""><strong>propagation</strong>: Controls transaction boundary propagation (default: <code>REQUIRED</code>)</li>
+<li class=""><strong>timeout/timeoutString</strong>: Sets the maximum time before a transaction times out</li>
+<li class=""><strong>readOnly</strong>: Indicates whether the transaction is read-only</li>
+<li class=""><strong>rollbackFor/rollbackForClassName</strong>: Defines exceptions that trigger rollback</li>
+<li class=""><strong>noRollbackFor/noRollbackForClassName</strong>: Defines exceptions that don't trigger rollback</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="proper-layer-for-transactional">Proper Layer for @Transactional<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#proper-layer-for-transactional" class="hash-link" aria-label="Direct link to Proper Layer for @Transactional" title="Direct link to Proper Layer for @Transactional" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="service-layer-recommended">Service Layer (Recommended)<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#service-layer-recommended" class="hash-link" aria-label="Direct link to Service Layer (Recommended)" title="Direct link to Service Layer (Recommended)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Why</strong>: Service layer defines business transaction boundaries</li>
+<li class=""><strong>Benefits</strong>:<!-- -->
+<ul>
+<li class="">Better transaction management</li>
+<li class="">Clear separation of concerns</li>
+<li class="">More accurate error handling</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="avoid-in-web-layer">Avoid in Web Layer<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#avoid-in-web-layer" class="hash-link" aria-label="Direct link to Avoid in Web Layer" title="Direct link to Avoid in Web Layer" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Issues</strong>:<!-- -->
+<ul>
+<li class="">Increased transaction response times</li>
+<li class="">Complicated error handling</li>
+<li class="">Potential connection pool exhaustion</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="daorepository-layer">DAO/Repository Layer<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#daorepository-layer" class="hash-link" aria-label="Direct link to DAO/Repository Layer" title="Direct link to DAO/Repository Layer" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Best Practice</strong>:<!-- -->
+<ul>
+<li class="">Let transactions propagate from Service layer</li>
+<li class="">Avoid redundant transaction declarations</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="best-practices-for-read-only-transactions">Best Practices for Read-Only Transactions<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#best-practices-for-read-only-transactions" class="hash-link" aria-label="Direct link to Best Practices for Read-Only Transactions" title="Direct link to Best Practices for Read-Only Transactions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-class-level-defaults-with-method-overrides">1. Class-Level Defaults with Method Overrides<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#1-class-level-defaults-with-method-overrides" class="hash-link" aria-label="Direct link to 1. Class-Level Defaults with Method Overrides" title="Direct link to 1. Class-Level Defaults with Method Overrides" translate="no">​</a></h3>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Transactional(readOnly = true)  // Default for all methods</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class SalesOrderService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public SalesOrderDetails viewSalesOrderDetails(String orderId) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Inherits readOnly=true from class level</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Optimized for read operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional  // Overrides to read-write</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void updateSalesOrderStatus(String orderId, OrderStatus newStatus) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Write operations allowed here</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-optimize-transaction-boundaries">2. Optimize Transaction Boundaries<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#2-optimize-transaction-boundaries" class="hash-link" aria-label="Direct link to 2. Optimize Transaction Boundaries" title="Direct link to 2. Optimize Transaction Boundaries" translate="no">​</a></h3>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class AdvancedStatementProcessor {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional(propagation = Propagation.NEVER)  // Never run in transaction</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public ComplexReport processAdvancedStatement(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        MultipartFile inputFile, </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ReportGenerationSettings settings) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Heavy processing without transaction</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ReportType reportType = settings.getReportType();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        StatementModel model = parseStatement(inputFile, settings);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ComplexReport report = generateReport(model);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Only start transaction for database operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        saveOperation(createOperation(inputFile, reportType, model));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return report;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private void saveOperation(Operation operation) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        operationRepository.save(operation);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-benefits-of-read-only-transactions">Performance Benefits of Read-Only Transactions<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#performance-benefits-of-read-only-transactions" class="hash-link" aria-label="Direct link to Performance Benefits of Read-Only Transactions" title="Direct link to Performance Benefits of Read-Only Transactions" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p><strong>Hibernate Optimizations</strong>:</p>
+<ul>
+<li class="">Flush mode set to <code>MANUAL</code></li>
+<li class="">No dirty checking</li>
+<li class="">No snapshot maintenance</li>
+<li class="">No cascading of state</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Database Optimizations</strong>:</p>
+<ul>
+<li class="">Read locks can be avoided</li>
+<li class="">Query optimizer hints can be applied</li>
+<li class="">Replication-aware routing to read replicas</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hikaricp-configuration-for-read-only-connections">HikariCP Configuration for Read-Only Connections<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#hikaricp-configuration-for-read-only-connections" class="hash-link" aria-label="Direct link to HikariCP Configuration for Read-Only Connections" title="Direct link to HikariCP Configuration for Read-Only Connections" translate="no">​</a></h2>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">spring</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">datasource</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">hikari</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">read-only</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean important" style="color:#36acaa">true</span><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic"># For read-only data sources</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">connection-timeout</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">30000</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">maximum-pool-size</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">10</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">minimum-idle</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">5</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">idle-timeout</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">300000</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">max-lifetime</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1800000</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-analysis-tips">Performance Analysis Tips<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#performance-analysis-tips" class="hash-link" aria-label="Direct link to Performance Analysis Tips" title="Direct link to Performance Analysis Tips" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p><strong>Monitor Connection Pool Metrics</strong>:</p>
+<ul>
+<li class="">Active connections</li>
+<li class="">Idle connections</li>
+<li class="">Connection acquisition time</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Query Optimization</strong>:</p>
+<ul>
+<li class="">Use <code>@QueryHints</code> for read-only queries</li>
+<li class="">Leverage Hibernate's query cache</li>
+<li class="">Consider second-level caching for frequently accessed data</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Benchmarking</strong>:</p>
+<ul>
+<li class="">Compare read-only vs read-write transaction performance</li>
+<li class="">Test with different isolation levels</li>
+<li class="">Monitor database server metrics</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
+<p>Proper use of read-only transactions in Spring can significantly improve application performance, especially for read-heavy applications. By following these best practices, you can optimize your Hibernate usage and reduce database load while maintaining clean, maintainable code.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-takeaways">Key Takeaways<a href="https://wiki.ouwesh.com/blog/spring-readonly-transaction-optimization#key-takeaways" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways" translate="no">​</a></h3>
+<ul>
+<li class="">Use <code>@Transactional(readOnly = true)</code> for read operations</li>
+<li class="">Keep transactions as short as possible</li>
+<li class="">Configure connection pools appropriately</li>
+<li class="">Monitor and optimize based on actual usage patterns</li>
+</ul>
+<p>For more detailed performance analysis and configurations, refer to:</p>
+<ul>
+<li class=""><a href="https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html" target="_blank" rel="noopener noreferrer" class="">Spring Transaction Management</a></li>
+<li class=""><a href="https://github.com/brettwooldridge/HikariCP" target="_blank" rel="noopener noreferrer" class="">HikariCP Configuration</a></li>
+<li class=""><a href="https://github.com/pbelathur/spring-boot-performance-analysis" target="_blank" rel="noopener noreferrer" class="">Spring Boot Performance Analysis</a></li>
+</ul>]]></content>
         <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
+            <name>Ouwesh Seeroo</name>
+            <uri>https://linkedin.com/in/ouweshs28</uri>
         </author>
-        <category label="Docusaurus" term="Docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Long Blog Post]]></title>
-        <id>https://wiki.ouwesh.com/blog/long-blog-post</id>
-        <link href="https://wiki.ouwesh.com/blog/long-blog-post"/>
-        <updated>2019-05-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
-        <content type="html"><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://linkedin.com/in/yangshun</uri>
-        </author>
-        <category label="Hello" term="Hello"/>
-        <category label="Docusaurus" term="Docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://wiki.ouwesh.com/blog/first-blog-post</id>
-        <link href="https://wiki.ouwesh.com/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet...]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://linkedin.com/in/yangshun</uri>
-        </author>
-        <category label="Hola" term="Hola"/>
-        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="Spring" term="Spring"/>
+        <category label="hibernate" term="hibernate"/>
+        <category label="performance" term="performance"/>
+        <category label="transactions" term="transactions"/>
+        <category label="Best Practices" term="Best Practices"/>
     </entry>
 </feed>
