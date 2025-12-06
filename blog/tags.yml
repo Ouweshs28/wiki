@@ -17,3 +17,33 @@ java:
   label: Best Practices
   permalink: /best-practices
   description: Software development best practices and guidelines
+
+hibernate:
+  label: Hibernate
+  permalink: /hibernate
+  description: Hibernate ORM framework and best practices
+
+performance:
+  label: Performance
+  permalink: /performance
+  description: Performance optimization techniques and best practices
+
+transactions:
+  label: Transactions
+  permalink: /transactions
+  description: Database transaction management and optimization
+
+'design-patterns':
+  label: Design Patterns
+  permalink: /design-patterns
+  description: Software design patterns and architectural best practices
+
+'strategy-pattern':
+  label: Strategy Pattern
+  permalink: /strategy-pattern
+  description: The Strategy design pattern and its implementations
+
+'factory-pattern':
+  label: Factory Pattern
+  permalink: /factory-pattern
+  description: The Factory design pattern and its use cases

@@ -1,0 +1,10 @@
+{
+  "position": 1,
+  "label": "Design Patterns",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Design Patterns in Spring Boot"
+  }
+}
