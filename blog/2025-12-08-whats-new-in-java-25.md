@@ -542,3 +542,24 @@ List<Integer> running = nums.stream()
 This is effectively `scan` from functional programming, now available as a reusable building block in the stream pipeline.
 
 ---
+
+## References
+
+- **OpenJDK JDK 25 Project Page**  
+  [https://openjdk.org/projects/jdk/25/](https://openjdk.org/projects/jdk/25/)
+
+- **JEP Index (All JDK Enhancement Proposals)**  
+  [https://openjdk.org/jeps/0](https://openjdk.org/jeps/0)
+
+- **Scoped Values (background JEPs)**  
+  JEP 446 – Scoped Values (Preview): [https://openjdk.org/jeps/446](https://openjdk.org/jeps/446)
+
+- **Pattern Matching & Sealed Types**  
+  JEP 441 – Pattern Matching for `switch`: [https://openjdk.org/jeps/441](https://openjdk.org/jeps/441)  
+  JEP 409 – Sealed Classes: [https://openjdk.org/jeps/409](https://openjdk.org/jeps/409)
+
+- **Stream Gatherers**  
+  JEP 461 – Stream Gatherers: [https://openjdk.org/jeps/461](https://openjdk.org/jeps/461)
+
+- **ZGC & GC Improvements Overview**  
+  ZGC project page: [https://wiki.openjdk.org/display/zgc/Main](https://wiki.openjdk.org/display/zgc/Main)
