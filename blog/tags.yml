@@ -72,3 +72,18 @@ typescript:
   label: TypeScript
   permalink: /typescript
   description: Typed superset of JavaScript that compiles to plain JavaScript
+
+java-25:
+  label: Java 25
+  permalink: /java-25
+  description: New features and changes introduced in Java 25
+
+jvm:
+  label: JVM
+  permalink: /jvm
+  description: Java Virtual Machine internals, tuning, and tooling
+
+language-features:
+  label: Language Features
+  permalink: /language-features
+  description: Programming language features, syntax, and semantics
