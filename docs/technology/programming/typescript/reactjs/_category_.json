@@ -1,0 +1,10 @@
+{
+  "position": 1,
+  "label": "React with TypeScript",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "React with TypeScript"
+  }
+}

@@ -47,3 +47,28 @@ transactions:
   label: Factory Pattern
   permalink: /factory-pattern
   description: The Factory design pattern and its use cases
+
+react:
+  label: React
+  permalink: /react
+  description: React JavaScript library for building user interfaces
+
+testing:
+  label: Testing
+  permalink: /testing
+  description: Software testing methodologies and tools
+
+vitest:
+  label: Vitest
+  permalink: /vitest
+  description: Next generation testing framework powered by Vite
+
+'react-testing-library':
+  label: React Testing Library
+  permalink: /react-testing-library
+  description: Simple and complete testing utilities for React
+
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: Typed superset of JavaScript that compiles to plain JavaScript

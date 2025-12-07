@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Wiki
+# My Personal Wiki
 
-Welcome to your personal wiki. Choose a section to explore:
+Welcome to my personal knowledge base. Here's what you'll find:
 
 - [Technology](./technology/)
   - DevOps, Programming, Java
