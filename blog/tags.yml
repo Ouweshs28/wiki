@@ -87,3 +87,28 @@ language-features:
   label: Language Features
   permalink: /language-features
   description: Programming language features, syntax, and semantics
+
+csharp:
+  label: C#
+  permalink: /csharp
+  description: C# programming language content
+
+dotnet:
+  label: .NET
+  permalink: /dotnet
+  description: .NET platform and framework related content
+
+'repository-pattern':
+  label: Repository Pattern
+  permalink: /repository-pattern
+  description: The Repository design pattern for data access abstraction
+
+'unit-of-work':
+  label: Unit of Work
+  permalink: /unit-of-work
+  description: The Unit of Work pattern for managing database transactions
+
+'entity-framework':
+  label: Entity Framework
+  permalink: /entity-framework
+  description: Entity Framework ORM for .NET applications
