@@ -1,0 +1,10 @@
+{
+  "position": 4,
+  "label": "Docker Optimization",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Docker Optimization"
+  }
+}

@@ -112,3 +112,23 @@ dotnet:
   label: Entity Framework
   permalink: /entity-framework
   description: Entity Framework ORM for .NET applications
+
+'spring-boot':
+  label: Spring Boot
+  permalink: /spring-boot
+  description: Spring Boot framework for building Java applications
+
+docker:
+  label: Docker
+  permalink: /docker
+  description: Docker containerization platform and best practices
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps practices, CI/CD, and infrastructure automation
+
+optimization:
+  label: Optimization
+  permalink: /optimization
+  description: Performance optimization and resource efficiency techniques
