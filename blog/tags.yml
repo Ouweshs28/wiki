@@ -132,3 +132,8 @@ optimization:
   label: Optimization
   permalink: /optimization
   description: Performance optimization and resource efficiency techniques
+
+records:
+  label: Java Records
+  permalink: /java-records
+  description: Java Records feature for immutable data carriers
