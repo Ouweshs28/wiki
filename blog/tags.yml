@@ -137,3 +137,8 @@ records:
   label: Java Records
   permalink: /java-records
   description: Java Records feature for immutable data carriers
+
+jdbc:
+  label: JDBC
+  permalink: /jdbc
+  description: Java Database Connectivity and data access optimization
