@@ -20,7 +20,7 @@ In this post we’ll look at:
 
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 1. Simpler `main` and `java.lang` Imports
 

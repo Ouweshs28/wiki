@@ -10,7 +10,7 @@ description: >
 
 In this article, we'll dive deep into implementing the Repository Pattern with Unit of Work in .NET Core applications. This architectural pattern helps abstract data access logic from business logic, making your application more maintainable, testable, and flexible.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Overview
 

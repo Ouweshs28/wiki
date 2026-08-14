@@ -7,7 +7,7 @@ tags: [spring, java, dependency-injection, best-practices]
 
 In Spring Framework, dependency injection (DI) is a fundamental concept that allows for the creation of loosely coupled components. Two common methods for DI are using the `@Autowired` annotation and constructor-based injection. This article explores when to use each method.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## @Autowired Annotation
 

@@ -18,7 +18,7 @@ In this post we'll look at:
 - **Before vs after** — what you had to do manually (and why nobody bothered)
 - **Real-world scenarios where this shines** — cache hits, conditional logic, and read/write routing
 
-<!-- truncate -->
+{/* truncate */}
 
 ## The Problem: Connections Are Expensive (And You're Wasting Them)
 

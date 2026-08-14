@@ -15,7 +15,7 @@ In this guide, you'll learn:
 - **Real-world patterns** — DTOs, value objects, projections, and configuration
 - **When records fit (and when they don't)** — practical guidance for your codebase
 
-<!-- truncate -->
+{/* truncate */}
 
 ## The Problem: Boilerplate Kills Productivity (and Your Will to Live)
 

@@ -10,7 +10,7 @@ slug: 2025/12/07/vitest-react-testing-library
 
 In this guide, we'll walk through setting up a robust testing environment for your React application using Vitest and React Testing Library. This combination provides a modern, fast, and efficient way to test your React components.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Prerequisites
 

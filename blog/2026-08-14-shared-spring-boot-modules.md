@@ -17,7 +17,7 @@ In this post we'll look at:
 - **Configuration and test support as part of the public API** — discoverable properties and reusable conventions
 - **Documentation and releases that scale to more than one project** — fewer archaeology sessions and safer upgrades
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 1. Start With a Boundary, Not a Dependency
 

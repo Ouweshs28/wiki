@@ -7,7 +7,7 @@ tags: [spring, hibernate, performance, transactions, best-practices]
 
 In Spring applications, proper transaction management is crucial for both data integrity and performance. This article explores how to optimize database operations using Spring's `@Transactional` annotation with a focus on read-only transactions and Hibernate optimizations.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Understanding @Transactional Attributes
 

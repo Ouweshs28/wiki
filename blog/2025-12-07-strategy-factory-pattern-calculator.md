@@ -7,7 +7,7 @@ tags: [java, design-patterns, spring, strategy-pattern, factory-pattern]
 
 In this article, we'll explore how to build a flexible and maintainable calculator engine using the Strategy and Factory design patterns in a Spring Boot application. This pattern is particularly useful when you need to apply different calculation rules based on different jurisdictions or conditions.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Overview
 

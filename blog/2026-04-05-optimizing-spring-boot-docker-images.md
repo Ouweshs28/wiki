@@ -15,7 +15,7 @@ In this post we'll look at:
 - **Layered JARs for blazing fast rebuilds**
 - **Summary of improvements and trade-offs**
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 1. Choosing the Right Base Image
 
