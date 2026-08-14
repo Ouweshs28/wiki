@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkouwesh_wiki=self.webpackChunkouwesh_wiki||[]).push([["6506"],{8913(e,s,k){k.r(s)}}]);

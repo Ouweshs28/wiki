@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkouwesh_wiki=self.webpackChunkouwesh_wiki||[]).push([["8366"],{936(e){e.exports=JSON.parse('{"name":"docusaurus-theme-search-algolia","id":"default"}')}}]);
