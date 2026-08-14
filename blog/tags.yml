@@ -8,6 +8,11 @@ java:
   permalink: /java
   description: Java programming language content
 
+maven:
+  label: Maven
+  permalink: /maven
+  description: Maven build, dependency, and module management
+
 'dependency-injection':
   label: Dependency Injection
   permalink: /dependency-injection
